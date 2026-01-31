@@ -17,6 +17,16 @@ using the pre-built binaries for each platforms in Releases.
 - [x] `search`: Searches files into a NZB file.
 - [x] `serve`: Serves a NZB file as an index webpage.
 
+## Configuration
+
+You can configure multiple NNTP servers using a JSON file or a `.env` file. The
+CLI checks for `./nzb.json`, `./nzb.config.json`, `$XDG_CONFIG_HOME/nzb/config.json`,
+or `/etc/nzb/config.json`, or you can set `NZB_CONFIG` to point to a specific
+file. See `nzb.example.json` and `nzb.example.env` in the repository for examples.
+
+Use `--server <name>` to select a configured server (e.g. `--server main`) for
+commands that contact an NNTP server (like `get`, `check`, `mirror`).
+
 ## `check`
 
 Checks if all articles in the NZB still exist. By default, the check is done
